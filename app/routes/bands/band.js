@@ -1,9 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class BandsBandRoute extends Route {
-  model(params) {
-    const bands = this.modelFor('bands');
+  @service catalog;
 
-    return bands.find((band) => band.id === params.id);
+  model(params) {
+    return this.catalog.find('band', (band) => band.id === params.id);
   }
 }
