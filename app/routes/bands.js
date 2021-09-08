@@ -62,7 +62,7 @@ export default class BandsRoute extends Route {
       name: 'Foo Fighters',
       songs: [pretender],
     });
-      
+    
     return [ledZeppelin, pearlJam, fooFighters];
   }
 }
