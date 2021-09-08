@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'rarwe-octanes',
+    modulePrefix: 'rarwe-octane',
     environment,
     rootURL: '/',
     locationType: 'auto',

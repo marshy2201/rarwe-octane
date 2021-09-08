@@ -1,5 +1,5 @@
-import Application from 'rarwe-octanes/app';
-import config from 'rarwe-octanes/config/environment';
+import Application from 'rarwe-octane/app';
+import config from 'rarwe-octane/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';
