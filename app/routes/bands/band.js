@@ -4,6 +4,6 @@ export default class BandsBandRoute extends Route {
   model(params) {
     const bands = this.modelFor('bands');
 
-    return bands.find(band => band.id === params.id);
+    return bands.find((band) => band.id === params.id);
   }
 }

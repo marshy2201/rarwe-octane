@@ -11,7 +11,7 @@ export default class StarRatingComponent extends Component {
     for (let i = 1; i <= this.maxRating; i++) {
       stars.push({
         rating: i,
-        full: i <= this.args.rating
+        full: i <= this.args.rating,
       });
     }
 
