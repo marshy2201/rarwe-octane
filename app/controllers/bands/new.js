@@ -1,8 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { dasherize } from '@ember/string';
 import { tracked } from '@glimmer/tracking';
-import Band from 'rarwe-octane/models/band';
 import { inject as service } from '@ember/service';
 
 export default class BandsNewController extends Controller {
@@ -17,9 +15,8 @@ export default class BandsNewController extends Controller {
   }
 
   @action
-  saveBand() {
-    const band = new Band({ name: this.name, id: dasherize(this.name) });
-    this.catalog.add('band', band);
+  async saveBand() {
+    const band = await this.catalog.create('band', { name: this.name });
     this.router.transitionTo('bands.band.songs', band.id);
   }
 }
