@@ -24,8 +24,8 @@ export default class BandsBandSongsController extends Controller {
   @action
   async saveSong() {
     const song = await this.catalog.create(
-      'song', 
-      { title: this.title }, 
+      'song',
+      { title: this.title },
       { band: { data: { id: this.model.id, type: 'bands' } } }
     );
 

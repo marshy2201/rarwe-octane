@@ -6,7 +6,7 @@ import { isArray } from '@ember/array';
 
 function extractRelationships(object) {
   let relationships = {};
-  
+
   for (let relationshipName in object) {
     relationships[relationshipName] = object[relationshipName].links.related;
   }
@@ -24,7 +24,6 @@ export default class CatalogService extends Service {
     this.storage.songs = tracked([]);
   }
 
-  
   async fetchAll(type) {
     if (type === 'bands') {
       const response = await fetch('/bands');
@@ -56,7 +55,7 @@ export default class CatalogService extends Service {
 
     return records;
   }
-  
+
   _loadResource(data) {
     let record;
     let { id, type, attributes, relationships } = data;
@@ -90,8 +89,8 @@ export default class CatalogService extends Service {
     }
 
     return record[relationship];
-  }  
-    
+  }
+
   async create(type, attributes, relationships = {}) {
     const payload = {
       data: {
@@ -107,8 +106,8 @@ export default class CatalogService extends Service {
         'Content-Type': 'application/vnd.api+json',
       },
       body: JSON.stringify(payload),
-    });  
-    
+    });
+
     const json = await response.json();
 
     return this.load(json);
