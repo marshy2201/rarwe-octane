@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { capitalize } from 'rarwe-octane/helpers/capitalize';
 
 export default class BandsBandSongsController extends Controller {
   @service catalog;
@@ -10,6 +11,11 @@ export default class BandsBandSongsController extends Controller {
   @tracked title;
   @tracked sortBy = 'title';
   @tracked searchTerm = '';
+
+  get newSongPlaceholder() {
+    let bandName = this.model.name;
+    return `New ${capitalize([bandName])} song`;
+  }
 
   get matchingSongs() {
     let searchTerm = this.searchTerm.toLowerCase();

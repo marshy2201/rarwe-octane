@@ -6,7 +6,7 @@
         @model={{item.band.id}}
         class={{if item.isActive "border-purple-400 border-l-4 pl-2"}}
       >
-        {{item.band.name}}
+        {{capitalize item.band.name}}
       </LinkTo>
     </li>
   {{/each}}
