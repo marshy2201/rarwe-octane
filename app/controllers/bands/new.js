@@ -9,7 +9,7 @@ export default class BandsNewController extends Controller {
 
   @tracked name;
 
-  constructor() {  
+  constructor() {
     super(...arguments);
 
     this.router.on('routeWillChange', (transition) => {

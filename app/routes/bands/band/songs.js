@@ -6,12 +6,12 @@ export default class BandsBandSongsRoute extends Route {
 
   queryParams = {
     sortBy: {
-      as: 's'
+      as: 's',
     },
     searchTerm: {
-      as: 'q'
-    }
-  }
+      as: 'q',
+    },
+  };
 
   async model() {
     const band = this.modelFor('bands.band');

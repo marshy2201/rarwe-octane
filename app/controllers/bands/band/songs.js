@@ -18,7 +18,7 @@ export default class BandsBandSongsController extends Controller {
       return song.title.toLowerCase().includes(searchTerm);
     });
   }
-    
+
   get sortedSongs() {
     let sortBy = this.sortBy;
     let isDescendingSort = false;
@@ -40,7 +40,7 @@ export default class BandsBandSongsController extends Controller {
       return 0;
     });
   }
-  
+
   @action
   async updateRating(song, rating) {
     song.rating = rating;
